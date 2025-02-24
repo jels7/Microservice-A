@@ -2,15 +2,38 @@
 
 To request data from Microservice-A, you need to send an HTTP GET request to the following endpoint:
 
-```
+````
 GET http://your-microservice-url/api/data
-```
+
+#### Example Request with Headers
+
+If your microservice requires headers or authentication tokens, you can include them in your request like this:
+
+```python
+import requests
+
+headers = {
+        'Authorization': 'Bearer YOUR_TOKEN'
+}
+
+response = requests.get('http://your-microservice-url/api/data', headers=headers)
+data = response.json()
+
+print(data)
+````
 
 #### Example Request
 
-```bash
-curl -X GET http://your-microservice-url/api/data
-```
+````bash
+```python
+import requests
+
+response = requests.get('http://your-microservice-url/api/data')
+data = response.json()
+
+print(data)
+```-X GET http://your-microservice-url/api/data
+````
 
 ### Receiving Data
 
